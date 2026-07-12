@@ -1,3 +1,7 @@
+output "stack_hci_storage_paths_id" {
+  description = "Map of id values across all stack_hci_storage_paths, keyed the same as var.stack_hci_storage_paths"
+  value       = { for k, v in azurerm_stack_hci_storage_path.stack_hci_storage_paths : k => v.id }
+}
 output "stack_hci_storage_paths_custom_location_id" {
   description = "Map of custom_location_id values across all stack_hci_storage_paths, keyed the same as var.stack_hci_storage_paths"
   value       = { for k, v in azurerm_stack_hci_storage_path.stack_hci_storage_paths : k => v.custom_location_id }
